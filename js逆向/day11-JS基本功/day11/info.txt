@@ -1,0 +1,53 @@
+
+
+控制台 == windows cmd
+清空  ctrl + l
+
+
+源代码
+    JS HTML CSS 源代码   调试JS代码
+
+   cookie
+       secure =true  只支持https
+       httponly = true 不能被JS获取  所以可以断定由后台返回
+            如果 httponly = true  可以在首页请求 `set-cookie` 获取 response.cookies
+
+
+    替换
+        1、读取本地文件
+        好处：
+            混淆的JS  正常JS a=1  混淆JS _xxxoo = qweasf
+            1、方便调试 对于混淆的JS文件  可以还原JS 然后替换进去 方便调试
+            2、JS文件 动态变量名  使用替换保持名字不变 方便调试   瑞数
+            3、修改文件  调试输出  插入debugger
+
+     debugger; 调试的时候 会去使用  检称断点调试
+     __zp_stoken__  逆向这个参数
+    GATEWAY_TOKEN_NAME = "__zp_stoken__"
+
+       设置cookie   n=值   i = (new Date).getTime() + 2304e5  COOKIE_DOMAIN 域名
+       Cookie.set("__zp_stoken__", n, i, COOKIE_DOMAIN, "/")
+       __zp_stoken__ = 5935eZzFYEi1pWHhoSCRbFFgveSFBTiJaHDZvPy8ENARmfT0cOFtIQ29cfDdvdltWNnZfCTpCNTUcKBhdPGFTWw4idHMHAzhTRjYnEgw1WRRCERsjV3hkJQQwRBFLDhEddE9tACA8N01RbB0%3D
+
+   在JS里面写断点
+        前提：  一定是你在JS下的断点 这个代码有被执行
+
+密码 一定是JS加密的
+
+
+加载HTML  加载JS文件   对JS初始化  用户触发事件  执行某一段JS文件 对数据加密  给服务器发请求 接受响应  解密函数 刷新给网页
+
+假设是密码加密   解密在后台服务器 如果不解的话 后台会用相同算法进行加密 做比对
+
+  断点调试
+    dom事件断点
+
+    XHR断点
+
+
+  下节课在复习一下
+
+
+
+
+

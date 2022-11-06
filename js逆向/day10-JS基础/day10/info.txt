@@ -1,0 +1,38 @@
+
+
+JS逆向反爬虫识别
+
+       头部验证
+            LWIzMWUtNDU0Ny05Mjk5LWI2ZDA3Yjc2MzFhYmEyYzkwM2NjfDI3Nzg1MDI4NzQ0MDczMjE=
+            base64编码  或者 16进制编码的数据
+            LWIzMWUtNDU0Ny05Mjk5LWI2ZDA3Yjc2MzFhYmEyYzkwM2NjfDI3Nzg1MDMwNTkyMTY1MDU=
+
+       参数加密
+            exs4CQYVFQ1sZmUUPTZVXSFBTBYZFxEaWFkHARl5FVdTVVNBTEsEBg8jR1I=
+
+       cookie
+           访问一个网站 走了几个请求？
+            https://www.dsedt.gov.mo/zh_CN/pg_home  不带cookie 或者cookie失效
+            captcha/gen_id_cookie   返回cookie   id_token
+            https://www.dsedt.gov.mo/zh_CN/pg_home  携带  cookie 返回正常的数据
+
+            boss 网站  采集招聘网数据     boss  智联 猎聘 前程  8000    6个省  6000成交的
+
+
+       测试：
+            可以使用xhr重放 看接口参数是否会切换
+            也可以重新发包
+
+        逆向基础
+           前端基础  看完之前的爬虫基础课
+
+
+        安装环境
+            下载 16版本的node  msi文件
+            配置环境变量
+            打开cmd 输入 node 能看见版本表示成功
+
+
+
+
+
