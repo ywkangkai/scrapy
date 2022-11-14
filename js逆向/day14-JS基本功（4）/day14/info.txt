@@ -1,0 +1,63 @@
+
+
+使用js开放接口
+    不给源码 收费1000
+    给源码 收费2000
+
+    1、使用JS破解了算法 不想给源码  就可以开放web接口
+
+express
+    搭建服务
+
+    python传参  JS使用req.query 获取查询字符串信息 返回的是对象
+    可以加token值
+
+
+服务器
+        就是服务器的账号密码 和你电脑一样  服务器就是你的电脑
+    公网IP地址
+    服务器 1核2G  学生98/年   不是学生 280/年
+    域名是需要另外买的   .com 49一年  备案 半个月
+
+
+
+执行JS文件  node环境 与浏览器是有区别的   80%可以  20%不可以
+
+
+4 扣JS代码案例
+    1、抓包 找 关键字 参数里面是否包含乱码
+    2、找参数在JS的那一个位置
+        1、搜索关键字 sign
+        2、xhr断点  get请求
+        3、hook关键点
+
+    七麦 逆向实战
+    analysis: ezUnGik8MAN5ZXIbKDV8TiwYOQ4aFCBMa2A1FAJ+cAoiQEsKGBReHl4NAARBZQ8DExcQFg51EgFaUFkLDldQVlA4Wkk=
+
+    analysis = (0,i[jt])((0,i[qt])(a, d))
+    (0,i[jt])((0,i[qt])(a, d)) = i[jt](i[qt](a, d))
+
+    arg1 =  i[qt](a, d)
+    analysis = i[jt](arg1)
+
+    a = 'MTEyMDIyLTExLTExMzZjbmZyZWVpcGFk@#/rank/indexSnapshot@#6948635722@#3'
+    d = 'xyz517cda96abcd'
+
+
+
+
+
+
+
+5 扣标准算法
+
+
+
+
+
+
+
+
+
+
+

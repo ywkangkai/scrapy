@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<title>Title</title>
+</head>
+<body>
+
+<input type="text" id="name">
+<input type="text" id="pwd">
+<button id="box" onclick="sut_data()">登陆</button>
+
+<button id="c_box" onclick="cat_data()">查询</button>
+<div>
+    <div id="data">
+        <p></p>
+    </div>
+</div>
+
+<script src="http://code.jquery.com/jquery-2.0.0.min.js"></script>
+<script>
+
+    function sut_data(){
+        mobile = $('#name').val()
+        pwd = $('#pwd').val()
+        formdata = {
+            'mobile':mobile,
+            'pwd': window.btoa('123123'+pwd.toString())
+        }
+        $.ajax({
+            url:'/',
+            type:'POST',
+            data: JSON.stringify(formdata),
+            contentType:'application/json',
+            dataType:'json',
+            success:function (res){
+                console.log(res)
+            }
+        })
+
+    }
+
+    function cat_data(){
+        $.ajax({
+            url:'/api',
+            type:'GET',
+            contentType:'application/json',
+            dataType:'json',
+            success:function (res){
+                 let content = `
+                        <p>${ res.data[0] }</p>
+                        <p>${ res.data[1] }</p>
+                         `
+                $('#data').append(content)
+
+            },
+            error:function (res){
+                console.log(res)
+            }
+        })
+    }
+
+
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,72 @@
+
+抓包检测
+模拟器检测
+vpn检测  true  false
+
+
+ajax请求  jquery   回调方法  success .error   .done .fail
+vue      回调方法   .then
+
+前端给服务器发请求  服务器会给你响应
+
+Kt = 'interceptors'
+Ft = 'use'
+xt = 'response'
+[Kt][Xt][Ft] =  interceptors.response.use
+
+对请求做了处理
+    analysis: eyUvUSRbVhNbVVIbMlMWUQQWKg
+    interceptors.request.use
+
+axios  http库  类似于python里面的reqeusts
+
+node == python解释器
+npm  === pip
+npm install axios
+
+请求  请求拦截改参数  发包   服务器响应   响应拦截改参数  返回给浏览器渲染
+
+响应拦截器用的多不多  后台返回加密数据
+
+    中间件
+        代理请求  代理响应
+
+xhr  只能断send
+open 断open
+
+
+扩展  在后面会细讲的  今天只是给大伙看一下
+    如果JS运行缺环境， 把JS放在Html里面即可 这里面就是最真得环境
+    取得话 用flask框架 跑不就可以了
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
