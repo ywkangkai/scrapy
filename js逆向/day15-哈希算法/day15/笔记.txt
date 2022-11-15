@@ -1,0 +1,84 @@
+
+翻页有2种模式
+    1 种点击翻页
+    2 下拉翻页
+
+['free', 'ipad', 'cn', '36']
+
+[1, '18:16:01', 2, '2022-11-14', '36', 'cn', 'free', 'ipad']
+
+
+算法专题
+    哈希  对称 非对称  国密 国家安全局SM
+
+    摘要算法
+        1、单向加密 不可逆
+        2、明文再长  密文固定长度  通常16进制表示
+    确认算法
+
+        1、调网站加密函数  模拟加密
+        2、用在线的标准加密网站 模拟加密   对比2个结果 判断是否标准加密算法
+        3、明文一样 加密的结果一样
+
+    MD5特征
+        密文 32位16进制数据            220466675e31b9d20c051d5e57974150
+        128位 16字节  32个字符
+
+    SHA系列
+        特征
+            sha1 40位
+            sha224 56
+            sha256 64
+            sha384 96
+            sha512 128
+        8的倍数
+        明文一样 密文也一样  不可逆
+        分析JS逆向  可以根据密文盲猜 方便搜索
+
+
+    做逆向的话
+        还是要分析JS CryptoJS.SHA384(pwd + '45678')
+
+
+时间戳
+    林威治时间1970年 距离现在时间的秒数
+    1668433103000
+    1668433063808
+    JavaScript 一般喜欢用毫秒为单位
+    python 一般获取的是秒为单位
+
+
+有道实战
+i:how
+from: AUTO
+to: AUTO
+smartresult: dict
+client: fanyideskweb
+salt: 16684330638083   时间戳
+sign: 108c1f00fd28ccf6b29ad96680204815  ？？？
+lts: 1668433063808     时间戳
+bv: 9edd1e630b7d8f13679a536d504f3d9f  ？？？
+doctype: json
+version: 2.1
+keyfrom: fanyi.web
+action: FY_BY_REALTlME
+
+sign   bv  需要逆向分析
+    初步分析是md5加密
+
+逆向思路
+    1、搜算法  md5(
+    2、搜参数 sign:
+    3、xhr断点  https://fanyi.youdao.com/translate_o?smartresult=dict&smartresult=rule
+         r = v.generateSaltSign(n)   n = 搜索关键字
+         用JS的标准库进行模拟加密  替换网站的算法包
+
+    总结： 对可疑的位置 全部下断点  再发包看断在哪个位置  然后把其他的断点取消
+
+
+
+
+
+
+
+
