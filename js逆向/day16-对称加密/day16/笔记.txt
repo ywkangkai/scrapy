@@ -1,0 +1,106 @@
+
+
+hmac 有一个key文件 结合hash加密
+特征
+    相同的密钥 相同的明文  加密的结果一样
+    不相同的密钥 相同的明文  加密的结果不一样
+    相同的密钥 不相同的明文  加密的结果不一样
+对于爬虫：如果是hmac加密 需要找key
+    key分2种
+        1、在前端里面写死的
+        2、由后端的某个接口返回的
+
+hamc加密网站 qcc头部参数
+
+
+登陆破解
+    wechat/phonePwdLogin  接口地址
+
+    phoneNum: "19918976328"
+    pwd: "a7431f0258c9b308a73d337c20ca9ee6"
+    sig: "9bfc2f5168465142d731cfc1ae2548e7"
+    t: 1668600927264
+    tenant: 1
+         pwd = md5(password)
+         sig
+            {phoneNum: '19918976328', pwd: 'b3bbbea04c0fc954d05646b6f6a902c0', t: 1668602108451, tenant: 1}
+            '19918976328    b3bbbea04c0fc954d05646b6f6a902c0   1668602108451   1 JzyqgcoojMiQNuQoTlbR5EBT8TsqzJ'
+         sig = md5(账号 + md5(密码) + 时间戳  + 1 + JzyqgcoojMiQNuQoTlbR5EBT8TsqzJ)
+
+
+    正常的返回结果 {"status":3,"message":"密码输入错误","data":null}  如果输入错误的账号密码能到这一步 就表示没问题
+    错误的返回结果 {"status":1,"message":"参数错误","data":null}     如果是这个结果 就是你的算法有问题
+    总结： 后续接单破解登陆算法  不需要网站的账号 也能够接
+
+    怎么确定算法？
+        用网站函数加密 ’1‘  对比标准算法网站 对比密文即可
+
+    网站登陆成功以后 靠啥维持关系
+       cookie 和 session 是成体系的
+       token
+
+
+    直播数据抓取实战
+        https://ucp.hrdjyun.com:60359/api/dy
+
+查询参数
+"{\"no\":\"dy0009\",\"data\":{\"days\":1,\"type\":1,\"dyCatName\":\"\",\"categoryName\":\"\",\"startDay\":\"2022-11-15\"}}"
+sign: "654384e85d8cb4f79553f57346b49e61a2917321a7c073e921bd49b22459bf68"
+tenant:"1"
+timestamp: 1668602737579
+token: "jNbPvqfoNuxa/HgO6oLujNyS6IiOkwbiPbbRac2hyb8rHuAuGTEFng=="
+
+sign 破解
+  1、搜索
+  sign =   k("param=" + JSON.stringify(n) + "&timestamp=" + e + "&tenant=1&salt=" + C)
+  sign = sha256('param={"no":"dy0009","data":{"days":1,"type":1,"dyCatName":"","categoryName":"","startDay":"2022-11-15"}}&timestamp=1668602956700&tenant=1&salt=kbn%&)@<?FGkfs8sdf4Vg1*+;`kf5ndl$')
+
+    总结： 把请求参数拼接 + 固定的字符串 再用sha256进行加密 获取sign值
+        修改参数 可以抓取全站数据  都是相同的算法
+
+
+对称加密
+    jS逆向
+        1、算法确定
+        2、JS里面找 key
+        3、如果是cbc模式 需要找 iv
+        4、明文
+
+    DES
+        破解搜索： encrypt（优先）   DES     padding
+
+    实战
+        https://bqcm0.cavip1.com/
+        参数加密  xhr调试
+
+            desEncrypt: function(e, t) {
+                var n = CryptoJS.enc.Utf8.parse(t);
+                return CryptoJS.DES.encrypt(e, n, {
+                    mode: CryptoJS.mode.ECB,
+                    padding: CryptoJS.pad.Pkcs7
+                }).toString()
+             },
+      随机 ？  后台开发者知道嘛，他也不知道
+
+      怎么确定对称加密算法的标准  看算法包  如果里面有很多算法模块  那99.9%属于标准的算法库
+
+    http://www.91118.com/Passport/Account/Login
+        假设不确定算法 使用xhr断点调试
+
+    总结：不管什么方式 在 网站找 key  iv  模式 算法
+
+    对称加密 只要没有对JS混淆 那肯定会有  encrypt（加密） decrypt（解密）
+
+
+
+
+
+
+
+
+
+
+
+
+
+
