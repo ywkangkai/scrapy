@@ -1,0 +1,24 @@
+
+对称加密
+    des  encrypt
+    不能够搜索 encrypt  名字被混淆了
+
+    主要是模拟  不是破解
+
+    优师云 密码 aes  搜索 encrypt(
+    建筑市场   数据加密  搜啥  json.parse(
+        怎么采集全部数据？？  pageNum 当前页 pageSize 是条数 total 总数据条数
+
+
+非对称加密
+    特点：加密后的数据很长   加密后的结果不一样
+    调试： JSEncrypt   setPublicKey  setKey
+
+    如果在完整看到  使用 JSEncrypt 进行加密 可以判是标准的
+
+
+
+
+
+
+
