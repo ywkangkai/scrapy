@@ -1,0 +1,37 @@
+
+微流云
+    https://api.wei-liu.com/api/v1/Token   登陆验证
+        password  预估rsa
+    https://api.wei-liu.com/api/v1/Token/code
+        返回 PUBLIC key   32位的值e9b4124a0e1640e69199078275fbc8a8
+
+pwd =  encrypt.encrypt(pubCode + sha512(password))
+
+pubCode 32位的值
+pub
+
+
+
+苏宁
+百度
+
+验证码
+    归结到表单参数加密 头部
+
+json = data, 与 data = data,区别是什么，
+json = data  传的是 json格式数据给后台
+data = data   传的是字典结构给后台 原生表单form
+data = json.dumps(data)  ====   json = data
+
+
+
+后台数据库存的密码  99%要求是不可逆的    假设后台 md5(sha512(sha256(pwd)))  用相同算法加密 对比密文
+
+pycharm 折叠 ctrl+ shift + -
+
+
+百度
+    pwd = e.RSA.encrypt(s)
+
+rsa加密
+
