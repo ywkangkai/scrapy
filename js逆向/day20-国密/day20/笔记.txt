@@ -1,0 +1,39 @@
+ 头部
+x-tif-signature: 5c63c6e0566cf74629d91a3ec81ad3f3dee21da6f96cb6c0c51fd20dae015858   sha256(f)
+x-tif-timestamp: 1669379463     时间
+X-Tingyun: c=B|4Nl_NnGbjwY;x=3f05d8bc20c544a7
+x-tif-nonce: h7WnUQcr       i()
+
+
+ 请求体
+encData:"3DFBCA4667B978F639BB23B95DCE4C     SM4
+signData:"vzk7cgmGXTdJ8K22Q5O3sZ+RSwyq6mt5gOk9ZN4s6dyK      SM2
+appCode: "T98HPCGN5ZVVQBS8LZQNOAEXVI9GYHKQ"   写死的
+
+
+{
+    "addr": "",
+    "regnCode": "430100",
+    "medinsName": "",
+    "medinsLvCode": "",
+    "medinsTypeCode": "",
+    "openElec": "",
+    "pageNum": 1,
+    "pageSize": 10
+}
+
+
+要注意webpack的导出方法 闭包
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,59 @@
+
+JI加密
+     jsfuck      [(![]+[])[!+[]+!![]+!![]]+([]
+      jj          ++sojson,/*sojson.com*/$$$$:(![]+"")[sojson],
+      aa          o=(ﾟｰﾟ)  =_=3; c=(ﾟΘﾟ) =(ﾟｰﾟ)-(ﾟｰﾟ); (ﾟДﾟ)
+
+
+极简
+    发请求  回调
+    _0x26e5ff(0xf1, 'orMr') = result
+_0x54fce7['data']['code'] && (_0x54fce7['data'][_0x26e5ff(0xf1, 'orMr')] = JSON['parse'](_0x37214d['a']['decipher'](_0x54fce7['data']['result']))),
+
+重新赋值数据
+_0x54fce7['data']['result']) = _0x37214d['a']['decipher'](_0x54fce7['data']['result']))
+
+_0x54fce7['data']['result'])  后台返回的密文数据
+_0x37214d['a']['decipher']  == _0x505719(_0x4a4703(_0x41fcab(_0x372e84)));  解密方法
+
+
+
+可以称数据格式
+content-type: application/json;charset=UTF-8  正常
+Content-Type: application/octet-stream   非正常
+
+如果发现表单数据不对  看content-type
+
+在发包之前对明文数据加密
+
+明文  --》 密文  --> 发包  ---> 后台
+请求拦截器  一般在这里面做处理的
+
+快速查找  搜 打渔
+    i['encode'](r['data'])['finish']()['slice']()
+
+
+
+
+
+
+
+总结
+    见识了 JS混淆  OB混淆  js加密
+    破解： 还是老规矩 正常调试   遇到密文 在控制台执行还原
+        对于混淆严重的 可以使用工具解析 比如字符串混淆的 变量名混淆的
+
+        \uni4533    极验 就是这种
+
+   组装参数  请求拦截器  发包  响应数据  响应拦截器
+
+
+
+
+
+
+
+
+
+
+
