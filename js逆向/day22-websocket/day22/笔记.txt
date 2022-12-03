@@ -1,0 +1,77 @@
+
+
+ws == http
+wss == https
+
+websocket 直播间 弹幕
+
+快手 抖音  虎牙  b站  六间房
+
+文本
+
+// 弹幕  张 我想买手机（id）  抖音可以私聊
+
+// 李四我是卖手机的
+
+
+采集某一个领域
+
+rpc最重要的是找加密位置  不用扣JS了
+
+针对前端加密算法 不想扣代码 能不能直接解密
+    可以在浏览器里面 找到JS的加密方法位置
+        然后用Python传参给浏览器的JS文件
+        导出加密算法 举例： sha256(password)   xxx = sha256
+        ws.sead (xxx(password))
+
+
+和selenium 比 websocket 最大得价值是什么
+    websocket是转发数据  基于真实浏览器  导出算法进行处理
+
+ selenium
+    1、你需要自己写代码  80%
+    2、有环境检测
+
+不好的方法是  你不可以关闭浏览器
+
+用websocket和RPC各有啥不同优缺点
+sk-RPC 是基于 websocket
+原生的websocket 不支持 集群搭建
+
+
+还有一个问题，就是加密参数怎么获取？
+    加密参数 请看JS你想的前4节课
+        全局搜索
+        hook
+        xhr断点
+        ast内存漫游
+
+解密ast混淆的JS  有开源的工具
+
+
+websocket 可以布局到服务器吗？
+    目前做开发用的是window服务器   基于浏览器
+
+需要操作浏览器，抓取到的数据是不是很有限？
+
+
+流程
+    客户端可以发数据
+    服务器也可以发数据
+        服务器
+            请求数据  如果是密码加密
+            send('123245')
+        客户端
+            pwd = md5('123245')
+
+            var xxxx = md5
+            onmessage (xxx){
+                pwd = xxx.data   接收明文
+                .send(xxxx(pwd))
+            }
+
+ 注意一个点就是： 需要激活浏览器的JS  是激活socket客户端  所以我每次刷新一下
+
+浏览器是客户端   python是服务端
+
+

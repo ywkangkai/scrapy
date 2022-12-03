@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<input id="box" type="text">
+<button onclick="pn()">发送</button>
+
+<script>
+    function pn(){
+         const websocket = new WebSocket('ws://127.0.0.1:8080/')
+        var text = document.getElementById('box').value
+        //连接成功建立的回调方法
+       websocket.onopen = function () {
+            console.log("WebSocket连接成功");
+            var message = {
+                content: text
+           };
+            message = JSON.stringify(message)
+           websocket.send(message)
+         }
+    }
+
+    function ps(){
+               //接收到消息的回调方法
+        websocket.onmessage = function (event) {
+            console.log(event.data);
+        }
+    }
+
+
+</script>
+
+
+
+
+</body>
+</html>
