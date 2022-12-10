@@ -1,0 +1,56 @@
+
+1、 控制台注入
+     需要不在debugger中
+2、 油猴注入JS
+    再JS执行前 先钩住
+3、 JS替换、注入代码到JS里面去
+
+
+
+广东省  头部签名
+    X-Dgi-Req-Nonce: sFy8tIosDkZyR0Ri
+    X-Dgi-Req-Signature: 9366c3eddcf941ea1a1ec4e26b67df3f89befc48c4e4010fd838e5755623b2c0
+
+    对于头部可以采用hook形式
+
+"d4e3abb7ca92ff4e986680807fedebc57bf18544c078b6b32f6792512f5a8975"
+可能还做了特殊的处理
+c5f418ed68346adbb7f5b6a8be62b12f6ff3bfce90ab0797734ccc4735171b90
+
+'5b889063ab71a9e2dfa6933404a7fe269db73b223f0b55e7d23f80a4f171ddab'
+
+头部 应该是先加密
+
+明文组成分析
+"AdkdCWTtP6sbESrtk8tUyS$mdateType=&openConvert=true&pageNo=3&pageSize=10&projectType=&publishEndTime=&publishStartTime=&secondType=A&siteCode=44&thirdType=&total=168235&type=trading-type1670243432193"
+
+'NdcSISaNPCPJpscl  k8tUyS$m   dateType=&openConvert=true&pageNo=4&pageSize=10&projectType=&publishEndTime=&publishStartTime=&secondType=A&siteCode=44&thirdType=&total=168235&type=trading-type   1670243563568'
+
+n + o + decodeURIComponent(r) + u   = 明文
+n = JS 内部算法
+o = JS 内部算法
+r = 参数
+u = 时间戳
+
+
+boss 直聘
+    入参  e t   后台返回的  这个值再cookie里面也是有的   分析的
+        "aSNUniTUWCUzE0xwU+qofkugs2duoilNq8+TJpNXv7Q="
+        1670245087599
+
+    注入rpc条件
+        1、注入socket连接
+        2、注入接口
+        传参
+
+对接口访问加快    实现系统计时 精确到毫秒级别    2S
+
+同一个账号 多线程
+    使用JS 还不需要账号   模拟你在网站的点击
+
+python 开多进程跑 访问接口
+
+
+环境差异
+    exports 在node里面是对象
+    exports 在浏览器里面是 ’undefined‘
